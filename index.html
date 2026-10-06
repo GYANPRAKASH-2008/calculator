@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A sleek, modern web-based calculator inspired by macOS and iOS design.">
+  <title>Calculator | Modern Minimalist</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="calculator-wrapper">
+    <!-- Header with window accents and minimalist title -->
+    <header class="calculator-header">
+      <div class="window-controls" aria-hidden="true">
+        <span class="control-dot dot-close"></span>
+        <span class="control-dot dot-minimize"></span>
+        <span class="control-dot dot-expand"></span>
+      </div>
+      <div class="header-titles">
+        <h1 class="calculator-title">CALCULATOR</h1>
+        <p class="calculator-subtitle">Precision &amp; Simplicity</p>
+      </div>
+      <div class="header-spacer" aria-hidden="true"></div>
+    </header>
+
+    <!-- Display Area -->
+    <section class="display-container" aria-live="polite">
+      <!-- Top line: Expression / History line -->
+      <div class="expression-line" id="expressionDisplay" title="Current Expression"></div>
+      <!-- Main line: Current input / Evaluation result -->
+      <div class="result-line" id="resultDisplay" title="Result">0</div>
+    </section>
+
+    <!-- Keypad Grid -->
+    <section class="keypad" id="keypad" aria-label="Calculator keypad">
+      <!-- Row 1: Function and Division -->
+      <button type="button" class="btn btn-function" data-action="clear" data-key="Escape" aria-label="All Clear">AC</button>
+      <button type="button" class="btn btn-function" data-action="backspace" data-key="Backspace" aria-label="Backspace">⌫</button>
+      <button type="button" class="btn btn-function" data-action="percent" data-key="%" aria-label="Percent">%</button>
+      <button type="button" class="btn btn-operator" data-action="operator" data-value="÷" data-key="/" aria-label="Divide">÷</button>
+
+      <!-- Row 2: Digits 7, 8, 9 and Multiplication -->
+      <button type="button" class="btn btn-number" data-action="number" data-value="7" data-key="7">7</button>
+      <button type="button" class="btn btn-number" data-action="number" data-value="8" data-key="8">8</button>
+      <button type="button" class="btn btn-number" data-action="number" data-value="9" data-key="9">9</button>
+      <button type="button" class="btn btn-operator" data-action="operator" data-value="×" data-key="*" aria-label="Multiply">×</button>
+
+      <!-- Row 3: Digits 4, 5, 6 and Subtraction -->
+      <button type="button" class="btn btn-number" data-action="number" data-value="4" data-key="4">4</button>
+      <button type="button" class="btn btn-number" data-action="number" data-value="5" data-key="5">5</button>
+      <button type="button" class="btn btn-number" data-action="number" data-value="6" data-key="6">6</button>
+      <button type="button" class="btn btn-operator" data-action="operator" data-value="−" data-key="-" aria-label="Subtract">−</button>
+
+      <!-- Row 4: Digits 1, 2, 3 and Addition -->
+      <button type="button" class="btn btn-number" data-action="number" data-value="1" data-key="1">1</button>
+      <button type="button" class="btn btn-number" data-action="number" data-value="2" data-key="2">2</button>
+      <button type="button" class="btn btn-number" data-action="number" data-value="3" data-key="3">3</button>
+      <button type="button" class="btn btn-operator" data-action="operator" data-value="+" data-key="+" aria-label="Add">+</button>
+
+      <!-- Row 5: Sign Toggle, Zero, Decimal, and Equals -->
+      <button type="button" class="btn btn-number" data-action="negate" data-key="n" aria-label="Positive or Negative Toggle">±</button>
+      <button type="button" class="btn btn-number" data-action="number" data-value="0" data-key="0">0</button>
+      <button type="button" class="btn btn-number" data-action="decimal" data-key="." aria-label="Decimal Point">.</button>
+      <button type="button" class="btn btn-operator btn-equals" data-action="equals" data-key="Enter" aria-label="Equals">=</button>
+    </section>
+
+    <!-- Subtle keyboard shortcut hints footer -->
+    <footer class="calculator-footer">
+      <span class="hint-item"><kbd>Esc</kbd> Clear</span>
+      <span class="hint-item"><kbd>⌫</kbd> Delete</span>
+      <span class="hint-item"><kbd>↵</kbd> Calculate</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
